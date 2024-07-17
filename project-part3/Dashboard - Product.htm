@@ -1,0 +1,144 @@
+<!doctype html>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header border-bottom">
+                    <h3 class="card-title">Edit Product Form</h3>
+                </div>
+                <div class="card-body">
+                    <p class="text-muted"></p>
+                    <form class="form-horizontal" action="http://127.0.0.1:8000/product/update/1" method="POST" enctype="multipart/form-data">
+                        <input type="hidden" name="_token" value="Gh9zMusPLRZUzmdtMLobUxmqi1RK8VQmAFmn2N2O" autocomplete="off">                        <div class="row mb-4">
+                            <label class="col-md-3 form-label">Category Name</label>
+                            <div class="col-md-9">
+                                <select class="form-control" name="category_id" onchange="getSubCategoryByCategory(this.value)" id="Category">
+                                    <option value="">-- Select Category --</option>
+                                                                            <option value="1" selected>Electronics</option>
+                                                                            <option value="2" >Men&#039;s Fashion</option>
+                                                                    </select>
+                            </div>
+                        </div>
+                        <div class="row mb-4">
+                            <label class="col-md-3 form-label">Sub-Category Name</label>
+                            <div class="col-md-9">
+                                <select class="form-control" name="sub_category_id" id="subCategory">
+                                    <option value="">-- Select Sub-Category --</option>
+                                                                            <option value="1" >Cellphone &amp; Accessories</option>
+                                                                            <option value="2" >Laptops</option>
+                                                                            <option value="4" selected>Cameras</option>
+                                                                            <option value="5" >Headphones &amp; Speakers</option>
+                                                                            <option value="6" >Tops</option>
+                                                                            <option value="7" >Accessories</option>
+                                                                    </select>
+                            </div>
+                        </div>
+                        <div class="row mb-4">
+                            <label class="col-md-3 form-label">Brand Name</label>
+                            <div class="col-md-9">
+                                <select class="form-control" name="brand_id">
+                                    <option value="">-- Select Brand --</option>
+                                                                            <option value="1"  selected>Canon</option>
+                                                                    </select>
+                            </div>
+                        </div>
+                        <div class="row mb-4">
+                            <label class="col-md-3 form-label">Unit Name</label>
+                            <div class="col-md-9">
+                                <select class="form-control" name="unit_id">
+                                    <option value="">-- Select Unit --</option>
+                                                                            <option value="1" >kg</option>
+                                                                            <option value="2" selected>piece</option>
+                                                                    </select>
+                            </div>
+                        </div>
+
+                        <div class="row mb-4">
+                            <label for="firstName" class="col-md-3 form-label">Product Name</label>
+                            <div class="col-md-9">
+                                <input class="form-control" name="name" id="firstName" value="Canon EOS Rebel T7 DSLR Camera" placeholder="Enter product name" type="text">
+                            </div>
+                        </div>
+                        <div class="row mb-4">
+                            <label for="firstName" class="col-md-3 form-label">Code</label>
+                            <div class="col-md-9">
+                                <input class="form-control" name="code" value="ABC" type="text">
+                            </div>
+                        </div>
+                        <div class="row mb-4">
+                            <label for="lastName" class="col-md-3 form-label">Short Description</label>
+                            <div class="col-md-9">
+                                <textarea class="form-control" name="short_description" placeholder="Enter short description" type="text"></textarea>
+                            </div>
+                        </div>
+                        <div class="row mb-4">
+                            <label for="lastName" class="col-md-3 form-label">Long Description</label>
+                            <div class="col-md-9">
+                                <textarea class="form-control" name="long_description" id="summernote" placeholder="Enter long description" type="text">&lt;p&gt;The EOS Rebel T7 camera can help mobile device users take their 
+photography to the next level. With a large 24.1 Megapixel CMOS sensor, 
+fast autofocus, built-in wireless connectivity and more, it combines 
+fantastic features with easy operation for high-quality images you&#039;ll be
+ proud to share.&lt;/p&gt;</textarea>
+                            </div>
+                        </div>
+                        <div class="row mb-4">
+                            <label for="lastName" class="col-md-3 form-label">Product Price</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <input class="form-control" name="regular_price" value="600" placeholder="Regular Price" type="number">
+                                    <input class="form-control" name="selling_price" value="650" placeholder="Selling Price" type="number">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-4">
+                            <label for="lastName" class="col-md-3 form-label">Stock Amount</label>
+                            <div class="col-md-9">
+                                <input class="form-control" name="stock_amount" value="5" type="number">
+                            </div>
+                        </div>
+                        <div class="row mb-4">
+                            <label for="lastName" class="col-md-3 form-label">Meta Title</label>
+                            <div class="col-md-9">
+                                <textarea class="form-control" name="meta_title" placeholder="Enter meta title" type="text">ABCD1</textarea>
+                            </div>
+                        </div>
+                        <div class="row mb-4">
+                            <label for="lastName" class="col-md-3 form-label">Meta Description</label>
+                            <div class="col-md-9">
+                                <textarea class="form-control" name="meta_description" placeholder="Enter meta description" type="text">ABCD2</textarea>
+                            </div>
+                        </div>
+
+                        <div class="row mb-4">
+                            <label for="email" class="col-md-3 form-label">Product Image</label>
+                            <div class="col-md-9">
+                                <input class="form-control" name="image" id="email" type="file">
+                                <div class="mt-4 border">
+                                    <img src="http://127.0.0.1:8000/uploads/product-images/fetured-item-4.png" alt="#" width="200px">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-4">
+                            <label for="email" class="col-md-3 form-label">Product Other Images</label>
+                            <div class="col-md-9">
+                                <input class="form-control" name="other_image[]" id="otherImage" type="file" multiple>
+                                <div class="mt-4 border">
+                                                                            <img src="http://127.0.0.1:8000/uploads/product-other-images/comment1.jpg" alt="#" width="120px">
+                                                                            <img src="http://127.0.0.1:8000/uploads/product-other-images/comment2.jpg" alt="#" width="120px">
+                                                                            <img src="http://127.0.0.1:8000/uploads/product-other-images/comment3.jpg" alt="#" width="120px">
+                                                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="row mb-4">
+                            <label for="email" class="col-md-3 form-label">Publication Status</label>
+                            <div class="col-md-9">
+                                <label><input name="status" type="radio" value="1" checked> Published</label>
+                                <label><input  name="status" type="radio" value="0" > Unpublished</label>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary" type="submit">Update Product</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
